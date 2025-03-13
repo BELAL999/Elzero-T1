@@ -53,6 +53,10 @@ body{
     padding : 0 15px;
 }
 
+.element__info{
+    color: var(--main-color);
+    text-align: center;
+}
 
 /* start of the header styles  */
 
@@ -151,14 +155,24 @@ header .links ul li:not(:last-child) a {
     margin-top: 0;
     color : var(--main-color);
     font-weight: bold;
-    font-size : 50px;
+    font-size : 40px;
     text-align: center;
 }
+
 .landing .landing__info p{
-    font-size: 19px;
+    font-size: 15px;
     line-height: 1.8;
     text-align: center;
-    width: 300px;
+    max-width: 300px;
+}
+@media (min-width:768px){
+    .landing .landing__info h1 {
+        font-size: 50px;
+    }
+    .landing .landing__info p{
+        font-size: 19px;
+        width: 300px;
+    }
 }
 /* end of the landing section styles  */
 
@@ -167,11 +181,21 @@ header .links ul li:not(:last-child) a {
 .feature {
     background: var(--section-bg);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: 1fr;
     justify-content: space-between;
     align-items: center;
     grid-gap: 20px;
     padding : 60px 0 ;
+}
+@media (min-width:768px){
+    .feature {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width:992px){
+    .feature {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 .feature .card {
     display: flex;
@@ -183,6 +207,9 @@ header .links ul li:not(:last-child) a {
 .feature .card p {
     text-align: center;
 }
+.feature .card h2{
+    text-align: center;
+}
 .feature .card i {
     color : var(--main-color);
     padding-bottom: 20px;
@@ -192,11 +219,6 @@ header .links ul li:not(:last-child) a {
 
 
 /* start of the services section styles  */
-.services{
-    height: 100vh;
-    padding : 0 60px; 
-    margin: 0 auto;
-}
 .services h1 , .portfolio h1, .about .container h2 , .contact  h2{ 
     text-align: center;
     font-size: 90px;
