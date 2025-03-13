@@ -1,0 +1,419 @@
+/* varibels */
+:root{
+    --main-color : #10cab7;
+    --section-bg : #f6f6f6 ;
+
+}
+
+
+/* global rules  */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+/* small */
+@media (min-width:768px){
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width:992px){
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width:1200px){
+    .container {
+        width: 1170px;
+    }
+}
+
+body{
+    font-family: 'work sans' , sans-serif;
+}
+.container {
+    margin : 0 auto ; 
+    padding : 0 15px;
+}
+
+
+/* start of the header styles  */
+
+header {
+    padding:20px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .logo img{
+        width: 60px;
+}
+.container .links {
+    position: relative;
+}
+.nav__menu{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.nav__menu span{
+    display: block;
+    width:30px;
+    height:3px;
+    background:#333;
+    margin-bottom: 5px;
+}
+.nav__menu :nth-child(2){
+    width: 60%;
+    transition: 0.3s;
+}
+.nav__menu:hover :nth-child(2) {
+    width: 100%;
+}
+
+.container ul { 
+    background:#e1e1e1;
+    list-style: none;
+    padding: 0px;
+    margin: 0 ;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    z-index : 3;
+}
+.hidden{
+    display: none;
+}
+.visble{
+    display: block;
+}
+.container .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+.container ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.5s;
+}
+header .links ul li a:hover {
+    padding-left: 25px;
+}
+header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #bababa;
+}
+/* end of the headaer styles  */
+
+
+
+
+
+/* start of the landing section styles  */
+.landing{
+    background-image: url(https://www.lightstalking.com/wp-content/uploads/black_and_1534817744.jpeg.webp);
+    height: calc(100vh - 68px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+
+}
+.landing .landing__info h1{
+    margin-top: 0;
+    color : var(--main-color);
+    font-weight: bold;
+    font-size : 50px;
+    text-align: center;
+}
+.landing .landing__info p{
+    font-size: 19px;
+    line-height: 1.8;
+    text-align: center;
+    width: 300px;
+}
+/* end of the landing section styles  */
+
+
+/* start of the feature section styles  */
+.feature {
+    background: var(--section-bg);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 20px;
+    padding : 60px 0 ;
+}
+.feature .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding : 20px;
+}
+.feature .card p {
+    text-align: center;
+}
+.feature .card i {
+    color : var(--main-color);
+    padding-bottom: 20px;
+}
+/* end of the feature section styles  */
+
+
+
+/* start of the services section styles  */
+.services{
+    height: 100vh;
+    padding : 0 60px; 
+    margin: 0 auto;
+}
+.services h1 , .portfolio h1, .about .container h2 , .contact  h2{ 
+    text-align: center;
+    font-size: 90px;
+    opacity: 0.7;
+    color : #cdc6c6;
+    margin-bottom: 0;
+}
+.sevices__title p , .portfolio .p ,.about .container p ,.contact p{
+    margin-top: -30px;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    
+}
+@media (max-width:1199px){
+    .services__col{
+        display: none;
+    }
+}
+@media (max-width:992px){
+}
+@media (max-width:768px){
+    .services h1 , .portfolio h1, .about .container h2 , .contact  h2{
+        font-size: 50px;
+    }
+    .sevices__title p , .portfolio .p ,.about .container p ,.contact p{
+        margin-top: -20px;
+        font-size: 20px;
+    }
+
+}
+
+.cards{
+    display: grid;
+    margin-top: 100px ;
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+.cards .socend-card , .cards .first-card {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.services__col{
+    position: relative;
+    align-self:center;
+}
+.services__col img{
+    width :260px;
+}
+.services__col::before{
+    content: "";
+    background-color: #2c4755;
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+/* end of the services section styles  */
+.portfolio{
+    background-color: var(--section-bg);
+    padding : 60px 0 ;
+    margin-top: 80px;
+}
+/* start of the portfolio section styles  */
+.portfolio .container .container__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+}
+.portfolio .container .porject{
+    background-color: white;
+}
+.portfolio .container .porject .info{
+    padding:20px;
+}
+.portfolio .container .porject .info .title{
+    font-weight: 700;
+    font-size: 25px;
+}
+.portfolio .container .porject img{
+    max-width: 100%;
+}
+/* Start About */
+.about {
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+  .about .about-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @media (max-width: 991px) {
+    .about .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .about .about-content .image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+  }
+  @media (max-width: 991px) {
+    .about .about-content .image {
+      margin: 0 auto 60px;
+    }
+  }
+  .about .about-content .image::before {
+    content: "";
+    position: absolute;
+    background-color: #ebeced;
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+  }
+  .about .about-content .image::after {
+    top: -40px;
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -150px;
+  }
+  @media (max-width: 991px) {
+    .about .about-content .image::before,
+    .about .about-content .image::after {
+      display: none;
+    }
+  }
+  .about .about-content .image img {
+    max-width: 100%;
+  }
+  .about .about-content .text {
+    flex-basis: calc(100% - 500px);
+  }
+  .about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+  }
+  .about .about-content .text hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+  }
+  .about .about-content .text p:last-of-type {
+    line-height: 2;
+    color: #777;
+ }
+ .about .about-content .text p{
+    font-size: 16px;
+    margin-top:16px;
+ }
+  /* End About */
+  /* Start Contact */
+  .contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+  }
+  .contact .info {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+  .contact .info .label {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+  }
+  .contact .info .link {
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+  }
+  .contact .info .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .contact .info .social i {
+    margin-left: 10px;
+    color: var(--secondary-color);
+  }
+  @media (max-width: 767px) {
+    .contact .info .label,
+    .contact .info .link {
+      font-size: 25px;
+    }
+  }
+  /* End Contact */
+  /* Start Footer */
+  .footer {
+    background-color: #2c4755;
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .footer span {
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  /* End Footer */
